@@ -1,0 +1,66 @@
+
+<div></div>
+<app-student-main-header></app-student-main-header>
+<div class="welcome-bar">
+  <img src="./assets/images/student-main.png" alt="" class="welcome-bar-img">
+  <div class="search-bar">
+    <div class="search-bar-content">
+      <span class="welcome-bar-text">Welcome to LIBRARY.INHA</span>
+      <div class="search-input input-group mb-3">
+        <input type="text" class="form-control " placeholder="Search">
+        <div class="input-group-append">
+          <img src="./assets/images/filter-btn.png" alt="" class="input-filter">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="info-bar">
+  <div class="date-bar">
+    <div class="date-info">NOV 6, 2022, SUNDAY</div>
+    <div class="get-started-title">
+      <span class="get-started-text-1">USING THE LIBRARY</span>
+      <span class="get-started-text-2">Get started using the library with these guides</span>
+    </div>
+  </div>
+  <div class="instruction-cards">
+    <mat-card class="card">
+      <mat-card-title class="card-title"><img src="./assets/images/how-to-icon.png" alt="">HOW TO</mat-card-title>
+      <mat-card-subtitle>BORROW BOOKS</mat-card-subtitle>
+    </mat-card>
+    <mat-card class="card card-top">
+      <mat-card-title class="card-title"><img src="./assets/images/how-to-icon.png" alt="">ABOUT</mat-card-title>
+      <mat-card-subtitle></mat-card-subtitle>
+    </mat-card>
+    <mat-card class="card">
+      <mat-card-title class="card-title"><img src="./assets/images/how-to-icon.png" alt="">HOW TO</mat-card-title>
+      <mat-card-subtitle>DEADLINES & FEES</mat-card-subtitle>
+    </mat-card>
+    <mat-card class="card card-top">
+      <mat-card-title class="card-title"><img src="./assets/images/how-to-icon.png" alt="">HOW TO</mat-card-title>
+      <mat-card-subtitle></mat-card-subtitle>
+    </mat-card>
+  </div>
+  <div class="collections-bar">
+    <span class="collections-text-1">EXPLORE OUR COLLECTIONS</span>
+    <span class="collections-text-2">Discover the unique holdings of our Library.</span>
+    <div class="slider">
+      <svg (click)="prevImageClick()" class="slider-arrow-left" xmlns="http://www.w3.org/2000/svg" width="13"
+           height="24" viewBox="0 0 13 24"
+           fill="none">
+        <path d="M0 12L12.75 0.741669L12.75 23.2583L0 12Z" fill="currentColor"/>
+      </svg>
+      <div class="collections">
+        <ng-image-slider [images]="collections" [imagePopup]="false" [infinite]="true"
+                         [imageSize]="{width: '30%', height: '30%', space: 30}" [showArrow]="false" #slider
+        ></ng-image-slider>
+      </div>
+      <svg (click)="nextImageClick()" class="slider-arrow-right" xmlns="http://www.w3.org/2000/svg" width="13"
+           height="24" viewBox="0 0 13 24"
+           fill="none">
+        <path d="M13 12L0.25 23.2583L0.25 0.74167L13 12Z" fill="currentColor"/>
+      </svg>
+    </div>
+  </div>
+</div>
+<app-student-main-footer></app-student-main-footer>
