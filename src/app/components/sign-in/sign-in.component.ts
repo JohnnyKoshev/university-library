@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {SignInService} from "../../services/sign-in.service";
 
 @Component({
   selector: 'app-sign-in',
@@ -8,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 
 
 export class SignInComponent implements OnInit {
+  onClick(credentials: {ID: string, password: string},e: Event){
+    e.preventDefault();
+    this.signInService.validateSignIn(credentials);
+    console.log('test', credentials);
+  }
 
-
-  constructor() { }
+  constructor(private signInService: SignInService) { }
 
   ngOnInit(): void {
   }

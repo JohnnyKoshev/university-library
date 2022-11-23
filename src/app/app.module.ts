@@ -12,10 +12,13 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { StudentMainComponent } from './components/student-main/student-main.component';
 import { StudentMainHeaderComponent } from './components/student-main-header/student-main-header.component';
 import {MatCardModule} from "@angular/material/card";
-
+import { HttpClientModule } from '@angular/common/http';
 import { NgImageSliderModule } from 'ng-image-slider';
 import { StudentMainAskComponent } from './components/student-main-ask/student-main-ask.component';
 import { StudentMainFooterComponent } from './components/student-main-footer/student-main-footer.component';
+import { StudentMenuComponent } from './components/student-menu/student-menu.component';
+import { StudentDashboardComponent } from './components/student-dashboard/student-dashboard.component';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +27,9 @@ import { StudentMainFooterComponent } from './components/student-main-footer/stu
     StudentMainComponent,
     StudentMainHeaderComponent,
     StudentMainAskComponent,
-    StudentMainFooterComponent
+    StudentMainFooterComponent,
+    StudentMenuComponent,
+    StudentDashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -35,9 +40,8 @@ import { StudentMainFooterComponent } from './components/student-main-footer/stu
     ReactiveFormsModule,
     NgbModule,
     MatCardModule,
-    NgImageSliderModule
-    // CarouselModule,
-    // AccordionModule,
+    NgImageSliderModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
