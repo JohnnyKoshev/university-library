@@ -1,9 +1,9 @@
 .top-bar{
   position: absolute;
   width: 100vw;
-  min-height: 13vh;
-  left: 0px;
-  top: 0px;
+  min-height: 14vh;
+  left: 0;
+  top: 0;
   background: rgba(85, 100, 178, 0.86);
 }
 
@@ -13,6 +13,7 @@
   right: 90.78%;
   top: 1.92%;
   bottom: 86.54%;
+  width: 5vw;
 }
 
 .logo-name{
@@ -33,19 +34,19 @@
 .logo-text-1{
   margin-bottom: 0;
   font-family: Inter, sans-serif;
-  font-size: 32px;
+  font-size: 1.8vw;
   font-weight: 800;
-  line-height: 39px;
+  line-height: 2.2vw;
   letter-spacing: 0em;
   text-align: left;
 }
 
 .logo-text-2{
   font-family: Inter, sans-serif;
-  font-size: 24px;
+  font-size: 1.3vw;
   font-style: italic;
   font-weight: 300;
-  line-height: 29px;
+  line-height: 1.7vw;
   letter-spacing: 0em;
   text-align: left;
 }

@@ -11,13 +11,18 @@
   flex-direction: column;
 }
 
+.main-bar{
+  width: 85%;
+  min-height: 100%;
+}
+
 .options-bar {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 1vh;
   flex: auto;
-  //padding-left: 1rem;
+  max-height: 50vh;
+  gap: 0.1vh;
 }
 
 .menu-element {
@@ -25,20 +30,16 @@
   flex-direction: row;
   gap: 0.5vw;
   align-items: center;
+}
 
-  font-family: 'Bai Jamjuree';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 1.3vw;
-  line-height: 20px;
-  color: #FFFFFF;
+.menu-element-bug{
+  gap: 1.1vw;
 }
 
 .top-bar{
-  min-height: 20%;
+  min-height: 10vh;
   width: 100%;
-  margin-bottom: 10vh;
-
+  margin-bottom: 3.5vh;
 
   display: flex;
   flex-direction: column;
@@ -72,8 +73,8 @@
   font-family: 'Inter';
   font-style: normal;
   font-weight: 700;
-  font-size: 1.4vw;
-  line-height: 1.9vw;
+  font-size: 1.3vw;
+  line-height: 1.8vw;
 
   color: #FFFFFF;
 }
@@ -92,13 +93,32 @@
   color: #FFFFFF;
 }
 
+.menu-option{
+  font-family: 'Bai Jamjuree';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.2vw;
+  line-height: 1.5vw;
+  color: #FFFFFF;
+}
+
 a{
   text-decoration: none;
   padding-left: 1rem;
-  min-height: 8vh;
-}
-
-a:focus{
-  background: #8F37FF;
+  min-height: 6vh;
   width: 100%;
 }
+
+
+.book-section{
+  margin-top: 0.7vh;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.book-section > a{
+  display: flex;
+  align-items: center;
+}
+

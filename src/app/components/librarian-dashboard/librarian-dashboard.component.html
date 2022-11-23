@@ -1,0 +1,40 @@
+<div class="menu-bar">
+  <div class="top-bar">
+    <span class="top-bar-text">INHA</span>
+    <span class="top-bar-text">Library</span>
+    <span class="top-bar-text">Management</span>
+  </div>
+  <div class="options-bar">
+    <a href="javascript:void(0)" class="menu-element" #dashboardOption (click)="dashboardOnClick(dashboardOption)"><img
+      src="./assets/images/menu-profile.png"
+      alt=""><span class="menu-option">Dashboard</span></a>
+    <a href="javascript:void(0)" class="menu-element" #booksOption (click)="booksOnClick(booksOption)"><img
+      src="./assets/images/menu-active-books.png" alt=""><span
+      class="menu-option">Books</span>
+    </a>
+    <div class="book-section" *ngIf="booksOption.dataset['clicked'] === 'true';">
+      <a href="javascript:void(0)" class="menu-option" #searchOption (click)="searchOnClick(searchOption)">Search
+        Book</a>
+      <a href="javascript:void(0)" class="menu-option" #addOption (click)="addOnClick(addOption)">Add Book</a>
+      <a href="javascript:void(0)" class="menu-option" #returnOption (click)="returnOnClick(returnOption)">Return
+        Book</a>
+    </div>
+    <a href="javascript:void(0)" class="menu-element" #studentsOption (click)="studentsOnClick(studentsOption)"><img
+      src="./assets/images/menu-students.png" alt=""><span
+      class="menu-option">Students</span></a>
+    <a href="javascript:void(0)" class="menu-element menu-element-bug" #requestsOption
+       (click)="requestsOnClick(requestsOption)"><img src="./assets/images/menu-requests.png" alt=""><span
+      class="menu-option">Requests</span></a>
+    <a href="javascript:void(0)" class="menu-element" #fineOption (click)="fineOnClick(fineOption)"><img
+      src="./assets/images/menu-fine.png" alt=""><span
+      class="menu-option">Fine</span></a>
+  </div>
+  <div class="bottom-bar">
+    <div class="bottom-bar-section">
+      <img src="./assets/images/menu-avatar.png" alt="">
+      <span class="id-text">U******</span>
+    </div>
+    <button type="button" class="btn btn-outline-light log-out-btn">Log out</button>
+  </div>
+</div>
+<div class="main-bar"></div>

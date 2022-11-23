@@ -4,6 +4,7 @@ import {SignInComponent} from "./components/sign-in/sign-in.component";
 import {StudentMainComponent} from "./components/student-main/student-main.component";
 import {StudentMainAskComponent} from "./components/student-main-ask/student-main-ask.component";
 import {StudentDashboardComponent} from "./components/student-dashboard/student-dashboard.component";
+import {LibrarianDashboardComponent} from "./components/librarian-dashboard/librarian-dashboard.component";
 
 const routes: Routes = [
   {
@@ -26,6 +27,15 @@ const routes: Routes = [
   {
     path: 'student/dashboard',
     component: StudentDashboardComponent
+  },
+  {
+    path: 'librarian/dashboard',
+    component: LibrarianDashboardComponent
+  },
+  {
+    path: 'librarian',
+    redirectTo: 'librarian/dashboard',
+    pathMatch: 'full'
   }
 ];
 
