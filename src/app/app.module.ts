@@ -21,6 +21,7 @@ import {StudentDashboardComponent} from './components/student-dashboard/student-
 import {
   LibrarianDashboardComponent
 } from './components/librarian-dashboard/librarian-dashboard.component';
+import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import {
     StudentMainFooterComponent,
     StudentMenuComponent,
     StudentDashboardComponent,
-    LibrarianDashboardComponent
+    LibrarianDashboardComponent,
+    AdminDashboardComponent
   ],
   imports: [
     BrowserModule,

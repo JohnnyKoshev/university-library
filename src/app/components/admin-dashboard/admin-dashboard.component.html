@@ -10,26 +10,21 @@
          (click)="dashboardOnClick(dashboardOption)"><img
         src="./assets/images/menu-profile.png"
         alt="" class="menu-icon"><span class="menu-option">Dashboard</span></a>
-      <a href="javascript:void(0)" class="menu-element" #booksOption (click)="booksOnClick(booksOption)"><img
+      <a href="javascript:void(0)" class="menu-element" #librariansOption (click)="librariansOnClick(librariansOption)"><img
         src="./assets/images/menu-active-books.png" alt="" class="menu-icon"><span
-        class="menu-option">Books</span>
+        class="menu-option">Librarians</span>
       </a>
-      <div class="book-section" *ngIf="booksOption.dataset['clicked'] === 'true';">
-        <a href="javascript:void(0)" class="menu-option" #searchOption (click)="searchOnClick(searchOption)">Search
-          Book</a>
-        <a href="javascript:void(0)" class="menu-option" #addOption (click)="addOnClick(addOption)">Add Book</a>
-        <a href="javascript:void(0)" class="menu-option" #returnOption (click)="returnOnClick(returnOption)">Return
-          Book</a>
+      <div class="librarian-section" *ngIf="librariansOption.dataset['clicked'] === 'true';">
+        <a href="javascript:void(0)" class="menu-option" #addLibrarianOption (click)="addLibrarianOnClick(addLibrarianOption)">Add Librarian</a>
+        <a href="javascript:void(0)" class="menu-option" #deleteLibrarianOption (click)="deleteLibrarianOnClick(deleteLibrarianOption)">Delete Librarian</a>
       </div>
       <a href="javascript:void(0)" class="menu-element" #studentsOption (click)="studentsOnClick(studentsOption)"><img
         src="./assets/images/menu-students.png" alt="" class="menu-icon"><span
         class="menu-option">Students</span></a>
-      <a href="javascript:void(0)" class="menu-element" #requestsOption
-         (click)="requestsOnClick(requestsOption)"><img src="./assets/images/menu-requests.png" alt="" class="menu-icon"><span
-        class="menu-option">Requests</span></a>
-      <a href="javascript:void(0)" class="menu-element" #fineOption (click)="fineOnClick(fineOption)"><img
-        src="./assets/images/menu-fine.png" alt="" class="menu-icon"><span
-        class="menu-option">Fine</span></a>
+      <div class="librarian-section" *ngIf="studentsOption.dataset['clicked'] === 'true';">
+        <a href="javascript:void(0)" class="menu-option" #addStudentOption (click)="addStudentOnClick(addStudentOption)">Add Student</a>
+        <a href="javascript:void(0)" class="menu-option" #deleteStudentOption (click)="deleteStudentOnClick(deleteStudentOption)">Delete Student</a>
+      </div>
     </div>
     <div class="bottom-bar">
       <div class="bottom-bar-section">

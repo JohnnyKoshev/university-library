@@ -7,23 +7,18 @@
         <p class="logo-text-2">University</p>
       </div>
     </div>
-
-
       <form class="login-card">
       <div class="login-text">
         <p class="login-text-1">INHA<span class="login-text-2">ID</span></p>
         <p class="login-text-3">Sign In</p>
       </div>
       <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="Enter ID" #IDField>
+        <input type="text" class="form-control" placeholder="Enter ID" #IDField (keydown.enter)="processSignIn({ID: IDField.value, password: passwordField.value}, signInBtn)">
       </div>
       <div class="input-group mb-3">
-        <input type="password" class="form-control" placeholder="Password" #passwordField>
+        <input type="password" class="form-control" placeholder="Password" #passwordField (keydown.enter)="processSignIn({ID: IDField.value, password: passwordField.value}, signInBtn)">
       </div>
-      <button mat-raised-button color="primary" (click)="onClick({ID: IDField.value, password: passwordField.value},$event)">SIGN IN</button>
+      <button mat-raised-button color="primary" #signInBtn (click)="onClick({ID: IDField.value, password: passwordField.value},$event)">SIGN IN</button>
       </form>
-
-
-
   </div>
 </div>

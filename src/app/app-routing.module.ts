@@ -5,6 +5,7 @@ import {StudentMainComponent} from "./components/student-main/student-main.compo
 import {StudentMainAskComponent} from "./components/student-main-ask/student-main-ask.component";
 import {StudentDashboardComponent} from "./components/student-dashboard/student-dashboard.component";
 import {LibrarianDashboardComponent} from "./components/librarian-dashboard/librarian-dashboard.component";
+import {AdminDashboardComponent} from "./components/admin-dashboard/admin-dashboard.component";
 
 const routes: Routes = [
   {
@@ -35,6 +36,15 @@ const routes: Routes = [
   {
     path: 'librarian',
     redirectTo: 'librarian/dashboard',
+    pathMatch: 'full'
+  },
+  {
+    path: 'admin/dashboard',
+    component: AdminDashboardComponent
+  },
+  {
+    path: 'admin',
+    redirectTo: 'admin/dashboard',
     pathMatch: 'full'
   }
 ];
