@@ -11,10 +11,10 @@ import {MatButton} from "@angular/material/button";
 
 export class SignInComponent implements OnInit {
 
-  onClick(credentials: { ID: string, password: string }, e: Event) {
+  onClick(credentials: { memberId: string, password: string }, e: Event) {
     e.preventDefault();
-    if (credentials.ID && credentials.password) {
-      this.signInService.validateSignIn(credentials);
+    if (credentials.memberId && credentials.password) {
+      this.signInService.login(credentials);
       console.log('test', credentials);
     }
   }

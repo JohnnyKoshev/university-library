@@ -12,7 +12,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {StudentMainComponent} from './components/student-main/student-main.component';
 import {StudentMainHeaderComponent} from './components/student-main-header/student-main-header.component';
 import {MatCardModule} from "@angular/material/card";
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {NgImageSliderModule} from 'ng-image-slider';
 import {StudentMainAskComponent} from './components/student-main-ask/student-main-ask.component';
 import {StudentMainFooterComponent} from './components/student-main-footer/student-main-footer.component';
@@ -21,7 +21,9 @@ import {StudentDashboardComponent} from './components/student-dashboard/student-
 import {
   LibrarianDashboardComponent
 } from './components/librarian-dashboard/librarian-dashboard.component';
-import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
+import {AdminDashboardComponent} from './components/admin-dashboard/admin-dashboard.component';
+import {BasicAuthInterceptor} from "./interceptors/basic-auth.interceptor";
+import {ErrorInterceptor} from "./interceptors/error.interceptor";
 
 
 @NgModule({
@@ -49,7 +51,10 @@ import { AdminDashboardComponent } from './components/admin-dashboard/admin-dash
     NgImageSliderModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -32,6 +32,8 @@ export class StudentMainComponent implements OnInit {
     this.slider.next();
   }
 
+
+
   constructor() {
   }
 

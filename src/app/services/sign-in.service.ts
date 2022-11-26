@@ -1,32 +1,60 @@
 import {Injectable} from '@angular/core';
 import {HttpHeaders} from "@angular/common/http";
 import {HttpClient} from '@angular/common/http';
+import {BehaviorSubject, map, Observable, tap} from "rxjs";
+import {Router} from "@angular/router";
 
-type Credentials = { ID: string, password: string };
+
+type User = {
+  memberId: string;
+  password: string;
+  authdata?: string;
+}
 
 @Injectable({
   providedIn: 'root'
 })
 export class SignInService {
-  credentials: Credentials | null = null;
-  apiUrl: string = "https://iut-library.herokuapp.com/login";
+  credentials: User | null = null;
+  private userSubject: BehaviorSubject<User | null>;
+  public user: Observable<User | null>;
+  apiUrl: string = "http://localhost:8080/api/v1/login";
 
 
-  validateSignIn(credentials: Credentials) {
+  login(credentials: User) {
     this.credentials = credentials;
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        'Authorization': 'Basic ' + btoa(`${this.credentials?.ID}:${this.credentials?.password}`)
+        'Authorization': 'Basic ' + window.btoa(`${this.credentials?.memberId}:${this.credentials?.password}`)
       })
     };
 
-    return this.http.get(this.apiUrl, httpOptions).subscribe((val) => {
-      console.log(val);
-    });
+    return this.http.post<any>(this.apiUrl, this.credentials, httpOptions)
+      .pipe(
+        tap(userData => {
+          console.log(userData);
+        }),
+        map(user => {
+          user.authdata = window.btoa(`${this.credentials?.memberId}:${this.credentials?.password}`);
+          localStorage.setItem('user', JSON.stringify(user));
+          this.userSubject.next(user);
+          return user;
+        }));
   }
 
+  logout() {
+    localStorage.removeItem('user');
+    this.userSubject.next(null);
+    this.router.navigate(['/auth']);
+  }
 
-  constructor(private http: HttpClient) {
+  public get userValue(): User | null {
+    return this.userSubject.value;
+  }
+
+  constructor(private http: HttpClient, private router: Router) {
+    this.userSubject = new BehaviorSubject<User | null>(JSON.parse(localStorage.getItem('user')!));
+    this.user = this.userSubject.asObservable();
   }
 }

@@ -6,6 +6,7 @@ import {StudentMainAskComponent} from "./components/student-main-ask/student-mai
 import {StudentDashboardComponent} from "./components/student-dashboard/student-dashboard.component";
 import {LibrarianDashboardComponent} from "./components/librarian-dashboard/librarian-dashboard.component";
 import {AdminDashboardComponent} from "./components/admin-dashboard/admin-dashboard.component";
+import {AuthGuard} from "./auth.guard";
 
 const routes: Routes = [
   {
@@ -19,19 +20,23 @@ const routes: Routes = [
   },
   {
     path: 'student/main',
-    component: StudentMainComponent
+    component: StudentMainComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'student/ask',
-    component: StudentMainAskComponent
+    component: StudentMainAskComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'student/dashboard',
-    component: StudentDashboardComponent
+    component: StudentDashboardComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'librarian/dashboard',
-    component: LibrarianDashboardComponent
+    component: LibrarianDashboardComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'librarian',
@@ -40,7 +45,8 @@ const routes: Routes = [
   },
   {
     path: 'admin/dashboard',
-    component: AdminDashboardComponent
+    component: AdminDashboardComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'admin',
