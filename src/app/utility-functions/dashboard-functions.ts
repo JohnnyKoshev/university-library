@@ -19,5 +19,13 @@ export class DashboardFunctions {
     }
   }
 
+  static isTriggered( searchedElement: string, options: HTMLCollection): string {
+    for (let i = 0; i < options.length; i++) {
+        if(options[i].lastChild!.textContent == searchedElement){
+          return (options[i] as HTMLAnchorElement).dataset['clicked']!;
+        }
+    }
+    return 'false';
+  }
 
 }

@@ -8,10 +8,10 @@
     <div class="options-bar">
       <a href="javascript:void(0)" class="menu-element" #dashboardOption
          (click)="dashboardOnClick(dashboardOption)"><img
-        src="./assets/images/menu-profile.png"
+        src="../../../../assets/images/menu-profile.png"
         alt="" class="menu-icon"><span class="menu-option">Dashboard</span></a>
       <a href="javascript:void(0)" class="menu-element" #librariansOption (click)="librariansOnClick(librariansOption)"><img
-        src="./assets/images/menu-active-books.png" alt="" class="menu-icon"><span
+              src="../../../../assets/images/menu-active-books.png" alt="" class="menu-icon"><span
         class="menu-option">Librarians</span>
       </a>
       <div class="librarian-section" *ngIf="librariansOption.dataset['clicked'] === 'true';">
@@ -19,7 +19,7 @@
         <a href="javascript:void(0)" class="menu-option" #deleteLibrarianOption (click)="deleteLibrarianOnClick(deleteLibrarianOption)">Delete Librarian</a>
       </div>
       <a href="javascript:void(0)" class="menu-element" #studentsOption (click)="studentsOnClick(studentsOption)"><img
-        src="./assets/images/menu-students.png" alt="" class="menu-icon"><span
+              src="../../../../assets/images/menu-students.png" alt="" class="menu-icon"><span
         class="menu-option">Students</span></a>
       <div class="librarian-section" *ngIf="studentsOption.dataset['clicked'] === 'true';">
         <a href="javascript:void(0)" class="menu-option" #addStudentOption (click)="addStudentOnClick(addStudentOption)">Add Student</a>
@@ -28,10 +28,10 @@
     </div>
     <div class="bottom-bar">
       <div class="bottom-bar-section">
-        <img src="./assets/images/menu-avatar.png" alt="">
-        <span class="id-text">U******</span>
+        <img src="../../../../assets/images/menu-avatar.png" alt="">
+        <span class="id-text">{{userData.memberId}}</span>
       </div>
-      <button type="button" class="btn btn-outline-light log-out-btn">Log out</button>
+      <button type="button" class="btn btn-outline-light log-out-btn" (click)="logout()">Log out</button>
     </div>
   </div>
   <div class="main-bar"></div>

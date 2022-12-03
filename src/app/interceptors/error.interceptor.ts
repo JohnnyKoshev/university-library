@@ -18,7 +18,7 @@ export class ErrorInterceptor implements HttpInterceptor {
       if (err.status === 401) {
         this.signInService.logout();
       }
-      const error = err.error.message || err.statusText;
+      const error = err.message || err.statusText;
       return throwError(error);
     }))
   }

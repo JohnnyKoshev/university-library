@@ -25,9 +25,9 @@
     <div class="bottom-bar">
       <div class="bottom-bar-section">
         <img src="./assets/images/menu-avatar.png" alt="">
-        <span class="id-text">U******</span>
+        <span class="id-text">{{userData.memberId}}</span>
       </div>
-      <button type="button" class="btn btn-outline-light log-out-btn">Log out</button>
+      <button type="button" class="btn btn-outline-light log-out-btn" (click)="logout()">Log out</button>
     </div>
   </div>
   <div class="main-bar"></div>

@@ -8,10 +8,10 @@
     <div class="options-bar">
       <a href="javascript:void(0)" class="menu-element" #dashboardOption
          (click)="dashboardOnClick(dashboardOption)"><img
-        src="./assets/images/menu-profile.png"
+        src="../../../../assets/images/menu-profile.png"
         alt="" class="menu-icon"><span class="menu-option">Dashboard</span></a>
       <a href="javascript:void(0)" class="menu-element" #booksOption (click)="booksOnClick(booksOption)"><img
-        src="./assets/images/menu-active-books.png" alt="" class="menu-icon"><span
+              src="../../../../assets/images/menu-active-books.png" alt="" class="menu-icon"><span
         class="menu-option">Books</span>
       </a>
       <div class="book-section" *ngIf="booksOption.dataset['clicked'] === 'true';">
@@ -22,21 +22,21 @@
           Book</a>
       </div>
       <a href="javascript:void(0)" class="menu-element" #studentsOption (click)="studentsOnClick(studentsOption)"><img
-        src="./assets/images/menu-students.png" alt="" class="menu-icon"><span
+              src="../../../../assets/images/menu-students.png" alt="" class="menu-icon"><span
         class="menu-option">Students</span></a>
       <a href="javascript:void(0)" class="menu-element" #requestsOption
-         (click)="requestsOnClick(requestsOption)"><img src="./assets/images/menu-requests.png" alt="" class="menu-icon"><span
+         (click)="requestsOnClick(requestsOption)"><img src="../../../../assets/images/menu-requests.png" alt="" class="menu-icon"><span
         class="menu-option">Requests</span></a>
       <a href="javascript:void(0)" class="menu-element" #fineOption (click)="fineOnClick(fineOption)"><img
-        src="./assets/images/menu-fine.png" alt="" class="menu-icon"><span
+              src="../../../../assets/images/menu-fine.png" alt="" class="menu-icon"><span
         class="menu-option">Fine</span></a>
     </div>
     <div class="bottom-bar">
       <div class="bottom-bar-section">
-        <img src="./assets/images/menu-avatar.png" alt="">
-        <span class="id-text">U******</span>
+        <img src="../../../../assets/images/menu-avatar.png" alt="">
+        <span class="id-text">{{userData.memberId}}</span>
       </div>
-      <button type="button" class="btn btn-outline-light log-out-btn">Log out</button>
+      <button type="button" class="btn btn-outline-light log-out-btn" (click)="logout()">Log out</button>
     </div>
   </div>
   <div class="main-bar"></div>

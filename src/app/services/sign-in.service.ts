@@ -3,6 +3,7 @@ import {HttpHeaders} from "@angular/common/http";
 import {HttpClient} from '@angular/common/http';
 import {BehaviorSubject, map, Observable, tap} from "rxjs";
 import {Router} from "@angular/router";
+import {environment} from "../../environments/environment";
 
 
 type User = {
@@ -18,8 +19,6 @@ export class SignInService {
   credentials: User | null = null;
   private userSubject: BehaviorSubject<User | null>;
   public user: Observable<User | null>;
-  apiUrl: string = "http://localhost:8080/api/v1/login";
-
 
   login(credentials: User) {
     this.credentials = credentials;
@@ -30,11 +29,8 @@ export class SignInService {
       })
     };
 
-    return this.http.post<any>(this.apiUrl, this.credentials, httpOptions)
+    return this.http.post<any>(environment.apiUrl+'api/v1/login', this.credentials, httpOptions)
       .pipe(
-        tap(userData => {
-          console.log(userData);
-        }),
         map(user => {
           user.authdata = window.btoa(`${this.credentials?.memberId}:${this.credentials?.password}`);
           localStorage.setItem('user', JSON.stringify(user));

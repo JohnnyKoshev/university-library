@@ -1,0 +1,23 @@
+.main-content{
+  display: flex;
+  flex-direction: column;
+}
+
+.search-bar{
+  width: 40%;
+  min-height: 20vh;
+  display: flex;
+align-items: flex-start;
+}
+
+.search-input{
+  width: 100%;
+  min-height: 100%;
+}
+
+.dropdown-option{
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+

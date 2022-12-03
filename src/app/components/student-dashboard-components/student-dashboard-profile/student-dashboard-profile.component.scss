@@ -1,0 +1,51 @@
+.main-content {
+  min-height: 100%;
+  width: 100%;
+  padding-left: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding-top: 2.5rem;
+}
+
+.profile-title{
+  font-family: 'Bai Jamjuree';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 4.5vw;
+  line-height: 3vw;
+}
+
+.profile-details {
+  display: grid;
+  grid-template-areas:
+  'first-name first-name-data'
+  'last-name last-name-data'
+  'id id-data'
+  'e-mail e-mail-data';
+  gap: 0.7rem;
+  width: 50%;
+}
+
+.profile-detail {
+  font-family: 'Bai Jamjuree';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2vw;
+  line-height: 2.5vw;
+}
+
+input{
+  border: 1px solid #000000;
+  border-radius: 6px;
+  width: 18vw;
+  margin-left: 2rem;
+  background-color: #FFFFFF;
+
+  font-family: 'Bai Jamjuree';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.2vw;
+  line-height: 1vw;
+  padding-left: 1rem;
+}

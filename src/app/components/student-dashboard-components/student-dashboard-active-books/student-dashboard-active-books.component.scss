@@ -1,0 +1,92 @@
+.main-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100%;
+  padding-left: 2.5rem;
+  padding-top: 2.5rem;
+}
+
+.active-book-title {
+  font-family: 'Bai Jamjuree';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 3.3vw;
+  line-height: 3vw;
+  margin-bottom: 2rem;
+  padding-left: 1.5rem;
+}
+
+.active-book-card {
+  width: 100%;
+  height: 27vh;
+
+  display: flex;
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+}
+
+.active-book{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1rem;
+}
+
+.active-book-status{
+  font-family: 'Bai Jamjuree';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.4vw;
+  line-height: 1.5vw;
+  color: #14FF00;
+  // color: #FF0000;
+}
+
+.active-book-text-1{
+  font-family: 'Bai Jamjuree';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.4vw;
+  line-height: 1.5vw;
+
+}
+
+.active-book-text-2{
+  font-family: 'Bai Jamjuree';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.6vw;
+  line-height: 1.7vw;
+}
+
+.active-books-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 60%;
+}
+
+.active-book-details-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.active-book-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-top: 1rem;
+}
+
+.active-book-img-container{
+  padding-top: 1rem;
+  padding-left: 1rem;
+}
+
+img{
+  width: 80%;
+}

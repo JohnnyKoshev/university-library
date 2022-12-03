@@ -1,11 +1,11 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {SignInComponent} from "./components/sign-in/sign-in.component";
-import {StudentMainComponent} from "./components/student-main/student-main.component";
-import {StudentMainAskComponent} from "./components/student-main-ask/student-main-ask.component";
-import {StudentDashboardComponent} from "./components/student-dashboard/student-dashboard.component";
-import {LibrarianDashboardComponent} from "./components/librarian-dashboard/librarian-dashboard.component";
-import {AdminDashboardComponent} from "./components/admin-dashboard/admin-dashboard.component";
+import {StudentMainComponent} from "./components/student-main-components/student-main/student-main.component";
+import {StudentMainAskComponent} from "./components/student-main-components/student-main-ask/student-main-ask.component";
+import {StudentDashboardComponent} from "./components/student-dashboard-components/student-dashboard/student-dashboard.component";
+import {LibrarianDashboardComponent} from "./components/librarian-dashboard-components/librarian-dashboard/librarian-dashboard.component";
+import {AdminDashboardComponent} from "./components/admin-dashboard-components/admin-dashboard/admin-dashboard.component";
 import {AuthGuard} from "./auth.guard";
 
 const routes: Routes = [

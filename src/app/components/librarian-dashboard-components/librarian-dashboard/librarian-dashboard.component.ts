@@ -1,5 +1,7 @@
 import {Component, ElementRef, OnInit} from '@angular/core';
-import {DashboardFunctions} from "../../utility-functions/dashboard-functions";
+import {DashboardFunctions} from "../../../utility-functions/dashboard-functions";
+import {SignInService} from "../../../services/sign-in.service";
+import {UserAuthData} from "../../../interfaces/user-auth-data";
 
 @Component({
   selector: 'app-librarian-dashboard',
@@ -9,6 +11,7 @@ import {DashboardFunctions} from "../../utility-functions/dashboard-functions";
 export class LibrarianDashboardComponent implements OnInit {
   mainOptions: HTMLCollection = this.elementRef.nativeElement.getElementsByClassName('menu-element');
   subOptions: HTMLCollection = this.elementRef.nativeElement.getElementsByClassName('menu-option');
+  userData: UserAuthData = this.signInService.userValue as UserAuthData;
 
   searchOnClick(searchElement: HTMLAnchorElement) {
     DashboardFunctions.optionOnClick(searchElement, this.subOptions);
@@ -42,7 +45,11 @@ export class LibrarianDashboardComponent implements OnInit {
     DashboardFunctions.optionOnClick(studentsElement, this.mainOptions);
   }
 
-  constructor(private elementRef: ElementRef) {
+  logout() {
+    this.signInService.logout();
+  }
+
+  constructor(private elementRef: ElementRef, private signInService: SignInService) {
   }
 
   ngOnInit(): void {
