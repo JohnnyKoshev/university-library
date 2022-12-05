@@ -13,11 +13,7 @@ const routes: Routes = [
     path: 'auth',
     component: SignInComponent
   },
-  {
-    path: '',
-    redirectTo: 'auth',
-    pathMatch: 'full'
-  },
+
   {
     path: 'student/main',
     component: StudentMainComponent,
@@ -52,7 +48,12 @@ const routes: Routes = [
     path: 'admin',
     redirectTo: 'admin/dashboard',
     pathMatch: 'full'
-  }
+  },
+  {
+    path: '',
+    redirectTo: 'auth',
+    pathMatch: 'full'
+  },
 ];
 
 @NgModule({

@@ -4,6 +4,7 @@ import {HttpClient} from '@angular/common/http';
 import {BehaviorSubject, map, Observable, tap} from "rxjs";
 import {Router} from "@angular/router";
 import {environment} from "../../environments/environment";
+import {UserAuthData} from "../interfaces/user-auth-data";
 
 
 type User = {
@@ -29,7 +30,7 @@ export class SignInService {
       })
     };
 
-    return this.http.post<any>(environment.apiUrl+'api/v1/login', this.credentials, httpOptions)
+    return this.http.post<UserAuthData>(environment.apiUrl+'api/v1/login', this.credentials, httpOptions)
       .pipe(
         map(user => {
           user.authdata = window.btoa(`${this.credentials?.memberId}:${this.credentials?.password}`);

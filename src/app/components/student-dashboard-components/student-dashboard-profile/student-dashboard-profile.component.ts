@@ -13,6 +13,7 @@ export class StudentDashboardProfileComponent implements OnInit {
   constructor(private signInService: SignInService) { }
 
   ngOnInit(): void {
+    console.log(this.userData);
   }
 
 }

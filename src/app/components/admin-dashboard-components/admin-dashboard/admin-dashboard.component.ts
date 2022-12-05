@@ -14,42 +14,43 @@ export class AdminDashboardComponent implements OnInit {
   userData: UserAuthData  = this.signInService.userValue as UserAuthData;
 
 
+  constructor(private elementRef: ElementRef, private signInService: SignInService) { }
+
+  ngOnInit(): void {
+  }
+
   deleteLibrarianOnClick(searchElement: HTMLAnchorElement) {
-    DashboardFunctions.optionOnClick(searchElement, this.subOptions);
+    DashboardFunctions.optionOnClick(searchElement, [this.subOptions]);
   }
 
   addLibrarianOnClick(addElement: HTMLAnchorElement) {
-    DashboardFunctions.optionOnClick(addElement, this.subOptions);
+    DashboardFunctions.optionOnClick(addElement, [this.subOptions]);
   }
 
   deleteStudentOnClick(searchElement: HTMLAnchorElement) {
-    DashboardFunctions.optionOnClick(searchElement, this.subOptions);
+    DashboardFunctions.optionOnClick(searchElement, [this.subOptions]);
   }
 
   addStudentOnClick(addElement: HTMLAnchorElement) {
-    DashboardFunctions.optionOnClick(addElement, this.subOptions);
+    DashboardFunctions.optionOnClick(addElement, [this.subOptions]);
   }
 
 
   librariansOnClick(bookElement: HTMLAnchorElement) {
-    DashboardFunctions.optionOnClick(bookElement, this.mainOptions);
+    DashboardFunctions.optionOnClick(bookElement, [this.mainOptions, this.subOptions]);
   }
 
   dashboardOnClick(dashboardElement: HTMLAnchorElement) {
-    DashboardFunctions.optionOnClick(dashboardElement, this.mainOptions);
+    DashboardFunctions.optionOnClick(dashboardElement, [this.mainOptions, this.subOptions]);
   }
 
   studentsOnClick(studentsElement: HTMLAnchorElement) {
-    DashboardFunctions.optionOnClick(studentsElement, this.mainOptions);
+    DashboardFunctions.optionOnClick(studentsElement, [this.mainOptions, this.subOptions]);
   }
 
   logout(){
     this.signInService.logout();
   }
 
-  constructor(private elementRef: ElementRef, private signInService: SignInService) { }
-
-  ngOnInit(): void {
-  }
 
 }

@@ -15,19 +15,19 @@ export class StudentMenuComponent implements OnInit {
 
 
   bookHistoryOnClick(bookHistoryElement: HTMLAnchorElement) {
-    DashboardFunctions.optionOnClick(bookHistoryElement, this.mainOptions);
+    DashboardFunctions.optionOnClick(bookHistoryElement, [this.mainOptions]);
   }
 
   fineOnClick(fineElement: HTMLAnchorElement) {
-    DashboardFunctions.optionOnClick(fineElement, this.mainOptions);
+    DashboardFunctions.optionOnClick(fineElement, [this.mainOptions]);
   }
 
   activeBooksOnClick(activeBooksElement: HTMLAnchorElement) {
-    DashboardFunctions.optionOnClick(activeBooksElement, this.mainOptions);
+    DashboardFunctions.optionOnClick(activeBooksElement, [this.mainOptions]);
   }
 
   profileOnClick(profileElement: HTMLAnchorElement) {
-    DashboardFunctions.optionOnClick(profileElement, this.mainOptions);
+    DashboardFunctions.optionOnClick(profileElement, [this.mainOptions]);
   }
 
   logout() {

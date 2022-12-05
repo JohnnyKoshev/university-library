@@ -100,6 +100,8 @@
   font-size: 1.2vw;
   line-height: 1.5vw;
   color: #FFFFFF;
+  display: flex;
+  align-items: center;
 }
 
 a{
@@ -136,3 +138,10 @@ a{
   width: 1.8vw;
 }
 
+.book-section{
+  margin-top: 0.7vh;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}

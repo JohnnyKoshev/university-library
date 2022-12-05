@@ -4,11 +4,11 @@
   </div>
   <div class="content-bar">
     <app-student-dashboard-profile
-      *ngIf="isTriggered('Profile', mainOptions) === 'true'"></app-student-dashboard-profile>
+      *ngIf="isTriggered('Profile', [this.mainOptions]) === 'true'"></app-student-dashboard-profile>
     <app-student-dashboard-active-books
-      *ngIf="isTriggered('Active Books', mainOptions) === 'true'"></app-student-dashboard-active-books>
+      *ngIf="isTriggered('Active Books', [this.mainOptions]) === 'true'"></app-student-dashboard-active-books>
     <app-student-dashboard-book-history
-      *ngIf="isTriggered('Book History', mainOptions) === 'true'"></app-student-dashboard-book-history>
-    <app-student-dashboard-fine *ngIf="isTriggered('Fine', mainOptions) === 'true'"></app-student-dashboard-fine>
+      *ngIf="isTriggered('Book History', [this.mainOptions]) === 'true'"></app-student-dashboard-book-history>
+    <app-student-dashboard-fine *ngIf="isTriggered('Fine', [this.mainOptions]) === 'true'"></app-student-dashboard-fine>
   </div>
 </div>

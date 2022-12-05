@@ -11,7 +11,7 @@
         src="../../../../assets/images/menu-profile.png"
         alt="" class="menu-icon"><span class="menu-option">Dashboard</span></a>
       <a href="javascript:void(0)" class="menu-element" #booksOption (click)="booksOnClick(booksOption)"><img
-              src="../../../../assets/images/menu-active-books.png" alt="" class="menu-icon"><span
+        src="../../../../assets/images/menu-active-books.png" alt="" class="menu-icon"><span
         class="menu-option">Books</span>
       </a>
       <div class="book-section" *ngIf="booksOption.dataset['clicked'] === 'true';">
@@ -22,13 +22,14 @@
           Book</a>
       </div>
       <a href="javascript:void(0)" class="menu-element" #studentsOption (click)="studentsOnClick(studentsOption)"><img
-              src="../../../../assets/images/menu-students.png" alt="" class="menu-icon"><span
+        src="../../../../assets/images/menu-students.png" alt="" class="menu-icon"><span
         class="menu-option">Students</span></a>
       <a href="javascript:void(0)" class="menu-element" #requestsOption
-         (click)="requestsOnClick(requestsOption)"><img src="../../../../assets/images/menu-requests.png" alt="" class="menu-icon"><span
+         (click)="requestsOnClick(requestsOption)"><img src="../../../../assets/images/menu-requests.png" alt=""
+                                                        class="menu-icon"><span
         class="menu-option">Requests</span></a>
       <a href="javascript:void(0)" class="menu-element" #fineOption (click)="fineOnClick(fineOption)"><img
-              src="../../../../assets/images/menu-fine.png" alt="" class="menu-icon"><span
+        src="../../../../assets/images/menu-fine.png" alt="" class="menu-icon"><span
         class="menu-option">Fine</span></a>
     </div>
     <div class="bottom-bar">
@@ -39,5 +40,21 @@
       <button type="button" class="btn btn-outline-light log-out-btn" (click)="logout()">Log out</button>
     </div>
   </div>
-  <div class="main-bar"></div>
+  <div class="main-bar">
+    <app-librarian-dashboard-main
+      *ngIf="isTriggered('Dashboard', [mainOptions, subOptions]) === 'true'"></app-librarian-dashboard-main>
+    <app-librarian-dashboard-books
+      *ngIf="isTriggered('Books', [mainOptions, subOptions]) === 'true' && isTriggered('Search Book', [mainOptions, subOptions]) === 'false' && isTriggered('Return Book', [mainOptions, subOptions]) === 'false' && isTriggered('Add Book', [mainOptions, subOptions]) === 'false'"></app-librarian-dashboard-books>
+    <app-librarian-dashboard-books-add-book
+      *ngIf="isTriggered('Add Book', [mainOptions, subOptions]) === 'true'"></app-librarian-dashboard-books-add-book>
+    <app-librarian-dashboard-books-return-book
+      *ngIf="isTriggered('Return Book', [mainOptions, subOptions]) === 'true'"></app-librarian-dashboard-books-return-book>
+    <app-librarian-dashboard-books-search-book
+      *ngIf="isTriggered('Search Book', [mainOptions, subOptions]) === 'true'"></app-librarian-dashboard-books-search-book>
+    <app-librarian-dashboard-students
+      *ngIf="isTriggered('Students', [mainOptions, subOptions]) === 'true'"></app-librarian-dashboard-students>
+    <app-librarian-dashboard-requests
+      *ngIf="isTriggered('Requests', [mainOptions, subOptions]) === 'true'"></app-librarian-dashboard-requests>
+    <app-librarian-dashboard-fine *ngIf="isTriggered('Fine', [mainOptions, subOptions]) === 'true'"></app-librarian-dashboard-fine>
+  </div>
 </div>

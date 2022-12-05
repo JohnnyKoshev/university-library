@@ -13,36 +13,40 @@ export class LibrarianDashboardComponent implements OnInit {
   subOptions: HTMLCollection = this.elementRef.nativeElement.getElementsByClassName('menu-option');
   userData: UserAuthData = this.signInService.userValue as UserAuthData;
 
+  isTriggered(searchedEl: 'Dashboard' | 'Books' | 'Students' | 'Requests' | 'Fine' | 'Add Book' | 'Search Book' | 'Return Book', options: HTMLCollection[]): string {
+    return DashboardFunctions.isTriggered(searchedEl, options);
+  }
+
   searchOnClick(searchElement: HTMLAnchorElement) {
-    DashboardFunctions.optionOnClick(searchElement, this.subOptions);
+    DashboardFunctions.optionOnClick(searchElement, [this.subOptions]);
   }
 
   addOnClick(addElement: HTMLAnchorElement) {
-    DashboardFunctions.optionOnClick(addElement, this.subOptions);
+    DashboardFunctions.optionOnClick(addElement, [this.subOptions]);
   }
 
   returnOnClick(returnElement: HTMLAnchorElement) {
-    DashboardFunctions.optionOnClick(returnElement, this.subOptions);
+    DashboardFunctions.optionOnClick(returnElement, [this.subOptions]);
   }
 
   booksOnClick(bookElement: HTMLAnchorElement) {
-    DashboardFunctions.optionOnClick(bookElement, this.mainOptions);
+    DashboardFunctions.optionOnClick(bookElement, [this.mainOptions, this.subOptions]);
   }
 
   dashboardOnClick(dashboardElement: HTMLAnchorElement) {
-    DashboardFunctions.optionOnClick(dashboardElement, this.mainOptions);
+    DashboardFunctions.optionOnClick(dashboardElement, [this.mainOptions, this.subOptions]);
   }
 
   fineOnClick(fineElement: HTMLAnchorElement) {
-    DashboardFunctions.optionOnClick(fineElement, this.mainOptions);
+    DashboardFunctions.optionOnClick(fineElement, [this.mainOptions, this.subOptions]);
   }
 
   requestsOnClick(requestsElement: HTMLAnchorElement) {
-    DashboardFunctions.optionOnClick(requestsElement, this.mainOptions);
+    DashboardFunctions.optionOnClick(requestsElement, [this.mainOptions, this.subOptions]);
   }
 
   studentsOnClick(studentsElement: HTMLAnchorElement) {
-    DashboardFunctions.optionOnClick(studentsElement, this.mainOptions);
+    DashboardFunctions.optionOnClick(studentsElement, [this.mainOptions, this.subOptions]);
   }
 
   logout() {

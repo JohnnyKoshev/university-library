@@ -47,6 +47,24 @@ import {
   StudentDashboardFineComponent
 } from './components/student-dashboard-components/student-dashboard-fine/student-dashboard-fine.component';
 import {MatSelectModule} from "@angular/material/select";
+import {MatTableModule} from "@angular/material/table";
+import {MatSortModule} from "@angular/material/sort";
+import {MatPaginatorModule} from "@angular/material/paginator";
+import { LibrarianDashboardMainComponent } from './components/librarian-dashboard-components/librarian-dashboard-main/librarian-dashboard-main.component';
+import { LibrarianDashboardBooksComponent } from './components/librarian-dashboard-components/librarian-dashboard-books-components/librarian-dashboard-books/librarian-dashboard-books.component';
+import { LibrarianDashboardStudentsComponent } from './components/librarian-dashboard-components/librarian-dashboard-students/librarian-dashboard-students.component';
+import { LibrarianDashboardRequestsComponent } from './components/librarian-dashboard-components/librarian-dashboard-requests/librarian-dashboard-requests.component';
+import { LibrarianDashboardFineComponent } from './components/librarian-dashboard-components/librarian-dashboard-fine/librarian-dashboard-fine.component';
+import { AdminDashboardMainComponent } from './components/admin-dashboard-components/admin-dashboard-main/admin-dashboard-main.component';
+import { AdminDashboardLibrariansComponent } from './components/admin-dashboard-components/admin-dashboard-librarians-components/admin-dashboard-librarians/admin-dashboard-librarians.component';
+import { AdminDashboardStudentsComponent } from './components/admin-dashboard-components/admin-dashboard-students-components/admin-dashboard-students/admin-dashboard-students.component';
+import { AdminDashboardLibrariansAddLibrarianComponent } from './components/admin-dashboard-components/admin-dashboard-librarians-components/admin-dashboard-librarians-add-librarian/admin-dashboard-librarians-add-librarian.component';
+import { AdminDashboardLibrariansDeleteLibrarianComponent } from './components/admin-dashboard-components/admin-dashboard-librarians-components/admin-dashboard-librarians-delete-librarian/admin-dashboard-librarians-delete-librarian.component';
+import { AdminDashboardStudentsAddStudentComponent } from './components/admin-dashboard-components/admin-dashboard-students-components/admin-dashboard-students-add-student/admin-dashboard-students-add-student.component';
+import { AdminDashboardStudentsDeleteStudentComponent } from './components/admin-dashboard-components/admin-dashboard-students-components/admin-dashboard-students-delete-student/admin-dashboard-students-delete-student.component';
+import { LibrarianDashboardBooksSearchBookComponent } from './components/librarian-dashboard-components/librarian-dashboard-books-components/librarian-dashboard-books-search-book/librarian-dashboard-books-search-book.component';
+import { LibrarianDashboardBooksAddBookComponent } from './components/librarian-dashboard-components/librarian-dashboard-books-components/librarian-dashboard-books-add-book/librarian-dashboard-books-add-book.component';
+import { LibrarianDashboardBooksReturnBookComponent } from './components/librarian-dashboard-components/librarian-dashboard-books-components/librarian-dashboard-books-return-book/librarian-dashboard-books-return-book.component';
 
 
 @NgModule({
@@ -64,7 +82,22 @@ import {MatSelectModule} from "@angular/material/select";
     StudentDashboardProfileComponent,
     StudentDashboardActiveBooksComponent,
     StudentDashboardBookHistoryComponent,
-    StudentDashboardFineComponent
+    StudentDashboardFineComponent,
+    LibrarianDashboardMainComponent,
+    LibrarianDashboardBooksComponent,
+    LibrarianDashboardStudentsComponent,
+    LibrarianDashboardRequestsComponent,
+    LibrarianDashboardFineComponent,
+    AdminDashboardMainComponent,
+    AdminDashboardLibrariansComponent,
+    AdminDashboardStudentsComponent,
+    AdminDashboardLibrariansAddLibrarianComponent,
+    AdminDashboardLibrariansDeleteLibrarianComponent,
+    AdminDashboardStudentsAddStudentComponent,
+    AdminDashboardStudentsDeleteStudentComponent,
+    LibrarianDashboardBooksSearchBookComponent,
+    LibrarianDashboardBooksAddBookComponent,
+    LibrarianDashboardBooksReturnBookComponent
   ],
   imports: [
     BrowserModule,
@@ -77,7 +110,10 @@ import {MatSelectModule} from "@angular/material/select";
     NgImageSliderModule,
     HttpClientModule,
     MatSelectModule,
-    NgbModule
+    NgbModule,
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true},
