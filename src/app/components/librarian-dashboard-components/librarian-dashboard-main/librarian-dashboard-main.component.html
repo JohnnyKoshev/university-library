@@ -1,1 +1,38 @@
-<p>librarian-dashboard-main works!</p>
+<div class="main-content">
+  <span class="main-title">Dashboard</span>
+
+  <div class="inner-content">
+    <div class="inner-content-cards">
+      <div class="inner-content-card">
+        <div class="inner-content-card-left">
+          <span class="inner-content-card-left-title">Available Books</span>
+          <span class="inner-content-card-left-text"><span class="inner-content-card-left-text text-colored">5303</span> Books Available to Borrow </span>
+        </div>
+        <img class="inner-content-card-icon" src="assets/images/available-books-icon.png" alt="">
+      </div>
+      <div class="inner-content-card">
+        <div class="inner-content-card-left">
+          <span class="inner-content-card-left-title">Borrowed Books</span>
+          <span class="inner-content-card-left-text"><span class="inner-content-card-left-text text-colored">59</span> Books Borrowed </span>
+        </div>
+        <img class="inner-content-card-icon" src="assets/images/borrowed-books-icon.png" alt="">
+      </div>
+      <div class="inner-content-card">
+        <div class="inner-content-card-left">
+          <span class="inner-content-card-left-title">Lost Books</span>
+          <span class="inner-content-card-left-text"><span class="inner-content-card-left-text text-colored">6</span> Books Lost </span>
+        </div>
+        <img class="inner-content-card-icon" src="../../../../assets/images/lost-books-icon.png" alt="">
+      </div>
+    </div>
+    <div class="pie-chart-container">
+      <span class="pie-char-title">Total Books Report</span>
+      <div class="pie-chart">
+        <ag-charts-angular
+          [options]="options"
+        ></ag-charts-angular>
+      </div>
+    </div>
+  </div>
+
+</div>

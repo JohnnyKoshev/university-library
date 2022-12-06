@@ -65,7 +65,7 @@ import { AdminDashboardStudentsDeleteStudentComponent } from './components/admin
 import { LibrarianDashboardBooksSearchBookComponent } from './components/librarian-dashboard-components/librarian-dashboard-books-components/librarian-dashboard-books-search-book/librarian-dashboard-books-search-book.component';
 import { LibrarianDashboardBooksAddBookComponent } from './components/librarian-dashboard-components/librarian-dashboard-books-components/librarian-dashboard-books-add-book/librarian-dashboard-books-add-book.component';
 import { LibrarianDashboardBooksReturnBookComponent } from './components/librarian-dashboard-components/librarian-dashboard-books-components/librarian-dashboard-books-return-book/librarian-dashboard-books-return-book.component';
-
+import { AgChartsAngularModule } from 'ag-charts-angular';
 
 @NgModule({
   declarations: [
@@ -113,7 +113,8 @@ import { LibrarianDashboardBooksReturnBookComponent } from './components/librari
     NgbModule,
     MatTableModule,
     MatSortModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    AgChartsAngularModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true},

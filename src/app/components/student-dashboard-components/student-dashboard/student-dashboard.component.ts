@@ -10,7 +10,7 @@ export class StudentDashboardComponent implements OnInit {
   mainOptions: HTMLCollection = this.elementRef.nativeElement.getElementsByClassName('menu-element');
 
   isTriggered(searchedEl: 'Profile' | 'Active Books' | 'Book History' | 'Fine', options: HTMLCollection[]): string {
-    return DashboardFunctions.isTriggered(searchedEl, options);
+    return DashboardFunctions.checkStatus(searchedEl, options);
   }
 
   constructor(private elementRef: ElementRef) {

@@ -17,6 +17,7 @@ export class AdminDashboardComponent implements OnInit {
   constructor(private elementRef: ElementRef, private signInService: SignInService) { }
 
   ngOnInit(): void {
+    DashboardFunctions.setDefaultValues([this.mainOptions, this.subOptions]);
   }
 
   deleteLibrarianOnClick(searchElement: HTMLAnchorElement) {
@@ -34,7 +35,6 @@ export class AdminDashboardComponent implements OnInit {
   addStudentOnClick(addElement: HTMLAnchorElement) {
     DashboardFunctions.optionOnClick(addElement, [this.subOptions]);
   }
-
 
   librariansOnClick(bookElement: HTMLAnchorElement) {
     DashboardFunctions.optionOnClick(bookElement, [this.mainOptions, this.subOptions]);

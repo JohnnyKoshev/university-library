@@ -15,10 +15,13 @@
         class="menu-option">Books</span>
       </a>
       <div class="book-section" *ngIf="booksOption.dataset['clicked'] === 'true';">
-        <a href="javascript:void(0)" class="menu-option" #searchOption (click)="searchOnClick(searchOption)">Search
+        <a href="javascript:void(0)" class="menu-option" data-clicked="false" #searchOption
+           (click)="searchOnClick(searchOption)">Search
           Book</a>
-        <a href="javascript:void(0)" class="menu-option" #addOption (click)="addOnClick(addOption)">Add Book</a>
-        <a href="javascript:void(0)" class="menu-option" #returnOption (click)="returnOnClick(returnOption)">Return
+        <a href="javascript:void(0)" class="menu-option" data-clicked="false" #addOption
+           (click)="addOnClick(addOption)">Add Book</a>
+        <a href="javascript:void(0)" class="menu-option" data-clicked="false" #returnOption
+           (click)="returnOnClick(returnOption)">Return
           Book</a>
       </div>
       <a href="javascript:void(0)" class="menu-element" #studentsOption (click)="studentsOnClick(studentsOption)"><img
@@ -44,7 +47,7 @@
     <app-librarian-dashboard-main
       *ngIf="isTriggered('Dashboard', [mainOptions, subOptions]) === 'true'"></app-librarian-dashboard-main>
     <app-librarian-dashboard-books
-      *ngIf="isTriggered('Books', [mainOptions, subOptions]) === 'true' && isTriggered('Search Book', [mainOptions, subOptions]) === 'false' && isTriggered('Return Book', [mainOptions, subOptions]) === 'false' && isTriggered('Add Book', [mainOptions, subOptions]) === 'false'"></app-librarian-dashboard-books>
+      *ngIf="isTriggered('Books', [mainOptions, subOptions]) === 'true' && (isTriggered('Search Book', [mainOptions, subOptions]) === 'false' || undefined) && (isTriggered('Return Book', [mainOptions, subOptions]) === 'false' || undefined) && (isTriggered('Add Book', [mainOptions, subOptions]) === 'false' || undefined)"></app-librarian-dashboard-books>
     <app-librarian-dashboard-books-add-book
       *ngIf="isTriggered('Add Book', [mainOptions, subOptions]) === 'true'"></app-librarian-dashboard-books-add-book>
     <app-librarian-dashboard-books-return-book
@@ -55,6 +58,7 @@
       *ngIf="isTriggered('Students', [mainOptions, subOptions]) === 'true'"></app-librarian-dashboard-students>
     <app-librarian-dashboard-requests
       *ngIf="isTriggered('Requests', [mainOptions, subOptions]) === 'true'"></app-librarian-dashboard-requests>
-    <app-librarian-dashboard-fine *ngIf="isTriggered('Fine', [mainOptions, subOptions]) === 'true'"></app-librarian-dashboard-fine>
+    <app-librarian-dashboard-fine
+      *ngIf="isTriggered('Fine', [mainOptions, subOptions]) === 'true'"></app-librarian-dashboard-fine>
   </div>
 </div>

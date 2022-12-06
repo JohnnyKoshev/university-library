@@ -1,0 +1,108 @@
+.main-title {
+  font-family: 'Bai Jamjuree';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 3.3vw;
+  line-height: 3vw;
+}
+
+.main-content {
+  padding-top: 2.5vh;
+  padding-bottom: 2.5vh;
+  padding-left: 3rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  width: 100%;
+  gap: 10vh;
+}
+
+.inner-content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-self: center;
+  gap: 12vw;
+}
+
+.inner-content-cards {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8vh;
+}
+
+.inner-content-card {
+  min-height: 20vh;
+  width: 45vh;
+  background: #FFFFFF;
+  border: 1px solid #868686;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  padding-right: 2vw;
+
+  display: flex;
+  align-items: center;
+  gap: 2vw;
+}
+
+.inner-content-card-left{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 2.5vw;
+  gap: 5vh;
+  width: 70%;
+}
+
+.pie-chart-container{
+  min-height: 45%;
+  width: 35%;
+  background: #FFFFFF;
+  border: 1px solid #868686;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  padding: 2vw 1.5vw;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.pie-char-title{
+  font-family: 'Bai Jamjuree';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.5vw;
+  line-height: 2vw;
+  align-self: center;
+}
+
+.pie-chart{
+  min-height: 70%;
+  width: 100%;
+}
+
+.inner-content-card-icon{
+  width: 3.5vw;
+}
+
+.inner-content-card-left-title{
+  font-family: 'Bai Jamjuree';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.2vw;
+  line-height: 1.2vw;
+}
+
+.inner-content-card-left-text{
+  font-family: 'Bai Jamjuree';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.9vw;
+  line-height: 1vw;
+  color: #929292;
+}
+
+.text-colored{
+  color: #5564B2;
+}

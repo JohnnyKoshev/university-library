@@ -14,7 +14,7 @@ export class LibrarianDashboardComponent implements OnInit {
   userData: UserAuthData = this.signInService.userValue as UserAuthData;
 
   isTriggered(searchedEl: 'Dashboard' | 'Books' | 'Students' | 'Requests' | 'Fine' | 'Add Book' | 'Search Book' | 'Return Book', options: HTMLCollection[]): string {
-    return DashboardFunctions.isTriggered(searchedEl, options);
+    return DashboardFunctions.checkStatus(searchedEl, options);
   }
 
   searchOnClick(searchElement: HTMLAnchorElement) {
@@ -57,6 +57,7 @@ export class LibrarianDashboardComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    DashboardFunctions.setDefaultValues([this.mainOptions, this.subOptions]);
   }
 
 }
